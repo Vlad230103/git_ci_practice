@@ -26,3 +26,9 @@ jobs:
 
       - name: Build documentation
         run: pdoc ./my_code.py -o ./site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site  # Берет папку, которую создал pdoc, и заливает на GitHub Pages
