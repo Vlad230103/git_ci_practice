@@ -23,3 +23,6 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+      - name: Build documentation
+        run: pdoc ./my_code.py -o ./site
